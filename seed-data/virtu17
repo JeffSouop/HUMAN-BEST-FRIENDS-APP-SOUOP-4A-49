@@ -1,0 +1,379 @@
+    1  sudo systemctl status sshd
+    2  ip a
+    3  for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done 
+    4  # Add Docker's official GPG key:
+    5  sudo apt-get update
+    6  sudo apt-get install ca-certificates curl gnupg
+    7  sudo install -m 0755 -d /etc/apt/keyrings
+    8  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    9  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   10  # Add the repository to Apt sources:
+   11  echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   12    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   13  sudo apt-get update 
+   14  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
+   15  ip a
+   16  sudo docker run hello-world 
+   17  docker images
+   18  sudo docker images
+   19  sudo usermod -aG docker $USER 
+   20  sudo systemctl enable docker.service
+   21  sudo systemctl enable containerd.service 
+   22  sudo reboot
+   23  ls
+   24  cd esiea-ressources
+   25  cd ..
+   26  history > virtu17/11 
+   27  history >> virtu17/11 
+   28  touch virtu 17/11
+   29  touch virtu17/11
+   30  touch virtu17/11.txt
+   31  clear
+   32  touch virtu17
+   33  history > virtu17
+   34  cat virtu17
+   35  history
+   36  history --help
+   37  history -a
+   38  history a
+   39  clear
+   40  ls
+   41  pwd
+   42  cd ..
+   43  ls
+   44  cd ..
+   45  ls
+   46  cd home/gabrielle
+   47  pwd
+   48  clear
+   49  ls
+   50  rm virtu
+   51  cd esiea-ressources
+   52  ls
+   53  ll
+   54  docker images
+   55  history
+   56  ls
+   57  cd ..
+   58  ld
+   59  ls
+   60  ls -a
+   61  ll
+   62  cd composetest
+   63  ld
+   64  ls
+   65  cat compose.yml
+   66  cat compose.yaml
+   67  clear
+   68  cd ..
+   69  ll
+   70  cd .docker
+   71  ls
+   72  cd ..
+   73  cd esiea-ressources
+   74  docker images
+   75  docker info
+   76  ls
+   77  docker inspect result
+   78  ll
+   79  docker images
+   80  history | grep build
+   81  cd result
+   82  docker build -t resultat
+   83  docker buildx build --help
+   84  docker --help | grep build
+   85  docker build resultat
+   86  docker build result
+   87  cd ..
+   88  docker build result
+   89  docker images
+   90  czt virtu17
+   91  cd ..
+   92  ls
+   93  cat virtu17
+   94  docker images
+   95  docker rmi <none>
+   96  docker rmi 82eb40404619
+   97  docker images
+   98  cd esiea-ressources
+   99  docker build -t result
+  100  cd ..
+  101  ls
+  102  cat Dockerfile
+  103  docker --help | grep name
+  104  docker build result
+  105  cd esiea-ressources
+  106  docker build result
+  107  docker images
+  108  docker remane --help
+  109  docker images
+  110  docker rename 82eb40404619
+  111  docker rename 82eb40404619 result
+  112  docker rename <none> result
+  113  clear
+  114  docker images
+  115  docker tag 82eb40404619 result
+  116  docker images
+  117  clear
+  118  history | grep docker
+  119  docker images
+  120  ls
+  121  cd esiea-ressources
+  122  ls
+  123  history
+  124  ls
+  125  docker build vote
+  126  history  grep tag
+  127  history
+  128  clear
+  129  docker images
+  130  docker tag a300456de29c vote
+  131  ls
+  132  docker build seed-data
+  133  docker images
+  134  docker tag 1b47f15be68c seed-data
+  135  ls
+  136  docker build worker
+  137  docker images
+  138  docker tag ed02eaa15152 worker
+  139  docker images
+  140  ls
+  141  cd result
+  142  docker build t result2
+  143  docker build -t result2
+  144  docker build -t result .
+  145  cd  ..
+  146  ls
+  147  cd  vote
+  148  cd  ..
+  149  ls
+  150  docker images
+  151  cd result
+  152  docker images
+  153  cd ..
+  154  cd  worker
+  155  docker rmi worker result vote seed-data 
+  156  cd  ..
+  157  docker rmi worker result vote seed-data 
+  158  docker images
+  159  ls
+  160  cd resiult
+  161  cd result
+  162  ls
+  163  docker build -t result .
+  164  docker run -d --name result result
+  165  cd  ..
+  166  ls
+  167  cd vote
+  168  docker build -t vote .
+  169  docker run -d --name vote vote
+  170  cd  ..
+  171  docker build -t worker .
+  172  docker run -d --name worker worker
+  173  cd  ..
+  174  cd seed-data 
+  175  docker build -t seed-data .
+  176  docker run -d --name seed-data seed-data
+  177  ls
+  178  nano Dockerfile
+  179  touch docker-compose.build.yml
+  180  nano docker-compose.build.yml
+  181  cd ..
+  182  cd worker
+  183  nano docker-compose.build.yml
+  184  cd  ..
+  185  cd vote
+  186  nano docker-compose.build.yml
+  187  rm docker-compose.build.yml
+  188  cd seed-data
+  189  cd  ..
+  190  lss
+  191  ls
+  192  mv docker-compose.build.yml ../
+  193  cd ..
+  194  ls
+  195  cd seed-data
+  196  ls
+  197  cd ..
+  198  nano docker-compose.build.yml
+  199  ip a
+  200  cd esiea-ressources
+  201  ls
+  202  cat vote/Dockerfile
+  203  docker inspect vote
+  204  cat vote/Dockerfile
+  205  docker stop vote
+  206  docker ps
+  207  docker run vote -p 80:80
+  208  docker run vote -p 80:80 vote
+  209  docker run --help
+  210  docker run -p 80:80 vote
+  211  docker run --name --help
+  212  clear
+  213  docker run -p 8080:80 --name vote vote
+  214  cd vote
+  215  docker run -p 8080:80 --name vote vote
+  216  clear
+  217  cd ..
+  218  docker rm vote
+  219  docker run --name vote -d -p 80:80 vote
+  220  docker ps
+  221  clear
+  222  docker ps
+  223  docker rm worker
+  224  docker stop worker result
+  225  clear
+  226  ls
+  227  docker run --name result -d -p 5001:80 result
+  228  docker rm worker result
+  229  docker run --name result -d -p 5001:80 result
+  230  docker ps
+  231  docker run --name seed-data seed-data
+  232  clear
+  233  ls
+  234  docker ps
+  235  docker inspect seed-data
+  236  docker stop seed-data
+  237  docker rm seed-data
+  238  docker ps
+  239  docker run --name seed-data -d -p 5002:80 seed-data
+  240  docker ps
+  241  docker run --name seed-data -d -p 5002:80 seed-data
+  242  docker stop seed-data
+  243  docker rm sedd-data
+  244  docker run --name seed-data -d -p 5002:80 seed-data
+  245  docker rm seed-data
+  246  docker run --name seed-data -d -p 5002:80 seed-data
+  247  docker ps
+  248  docker stop worker
+  249  docker rm worker
+  250  docker run --name worker -d -p 80:80 worker
+  251  docker run --name worker -d -p 5003:80 worker
+  252  rm worker
+  253  docker rm worker
+  254  docker run --name worker -d -p 5003:80 worker
+  255  docker ps
+  256  docker 
+  257  doker ps --all
+  258  docker ps --all
+  259  docker start -d seed-data
+  260  docker start --help
+  261  docker start seed-data
+  262  docker ps
+  263  clear
+  264  docker ps --all
+  265  docker logs vote
+  266  ls
+  267  cat requirements.txt
+  268  docker images
+  269  ls
+  270  ls -a
+  271  history
+  272  docker ps
+  273  cd ..
+  274  docker inspect vote
+  275  docker inspect result
+  276  docker run --name mon-redis -d redis
+  277  docker ps
+  278  docker logs vote
+  279  clear
+  280  docker logs vote
+  281  docker logs vote | unknown
+  282  docker logs vote | grep unknown
+  283  clear
+  284  docker logs vote | grep unknown
+  285  clear
+  286  docker logs vote | grep know
+  287  cd ../..
+  288  ls
+  289  cd usr
+  290  ls
+  291  cat lib
+  292  ls lib
+  293  ls local/lib
+  294  cd /usr/local/lib/python3.11/site-packages/redis
+  295  cd /local/lib/python3.11/site-packages/redis
+  296  cd /local/lib/python3.11
+  297  cd /local/lib/python3.11/
+  298  ls
+  299  python version
+  300  python3 -version
+  301  python3 --version
+  302  sudo apt upgrade
+  303  python3 --version
+  304  sudo apt upgrade python3
+  305  python3.11 --version
+  306  sudo shutdown -r
+  307  docker ps
+  308  docker container ls
+  309  docker images
+  310  docker start -d worker seed-data vote result redis
+  311  docker start --help
+  312  docker start worker seed-data vote result redis 
+  313  clear
+  314  docker network ls
+  315  ls
+  316  cd esiea-ressources
+  317  ls
+  318  docker logs 
+  319  docker logs vote
+  320  clear
+  321  docker network ls
+  322  docker inspect result
+  323  docker inspect vote
+  324  docker inspect seed-data
+  325  docker inspect vote
+  326  docker inspect result
+  327  docker inspect seed-data
+  328  ls
+  329  docker inspect worker
+  330  docker images
+  331  clear
+  332  docker logs vote
+  333  docker images
+  334  ls
+  335  find redis
+  336  clear
+  337  docker images
+  338  docker logs vote
+  339  clear
+  340  docker logs vote
+  341  docker images
+  342  history
+  343  history | grep pull
+  344  history | grep postgres
+  345  history | grep redis
+  346  cd esiea-ressources
+  347  history | grep redis
+  348  history | grep postgres
+  349  history | grep pull
+  350  history | grep back-tier
+  351  history | grep front-tier
+  352  history --help
+  353  history -n
+  354  history
+  355  history -a
+  356  history
+  357  cler
+  358  clear
+  359  ls
+  360  cd seed-data
+  361  history
+  362  ls ../..
+  363  cat ../../virtu17
+  364* 
+  365  history | grep pull
+  366  docker images
+  367  clear
+  368  history | grep 5001
+  369  history | grep 5002
+  370  docker inspect worker
+  371  docker ps
+  372  docker start worker seed-data vote result redis
+  373  docker ps
+  374  history | grep 5003
+  375  history | grep 5002
+  376  history | grep 5001
+  377  history | grep 80
+  378  docker ps
+  379  history >> virtu17
