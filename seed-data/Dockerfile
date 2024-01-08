@@ -10,14 +10,13 @@ RUN apt-get update \
     apache2-utils \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /seed
+WORKDIR /seed-data
 
 COPY . .
 
 # create POST data files with ab friendly formats
 RUN python make-data.py
-RUN chmod +x /seed/generate-votes.sh
-CMD /seed/generate-votes.sh
 
+RUN chmod +x generate-votes.sh
 
-
+CMD /seed-data/generate-votes.sh
